@@ -9,7 +9,6 @@ const features = [
   { icon: "⊞", label: "Relatórios",  desc: "DRE e análises geradas automaticamente." },
   { icon: "◉", label: "WhatsApp",    desc: "Atendimento automático adaptado ao seu negócio." },
 ];
-
 export default function Home() {
   return (
     <main style={{ background: D.bg, color: D.text, minHeight: "100vh" }}>
@@ -20,9 +19,7 @@ export default function Home() {
           <span style={{ fontWeight: 700, fontSize: 17, letterSpacing: "-0.3px" }}>Orbita</span>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <Link href="/login"
-              style={{ color: D.muted, fontSize: 14, padding: "6px 14px", borderRadius: 8, textDecoration: "none", transition: "color 0.15s" }}
-              onMouseEnter={(e: any) => e.currentTarget.style.color = D.text}
-              onMouseLeave={(e: any) => e.currentTarget.style.color = D.muted}>
+              style={{ color: D.muted, fontSize: 14, padding: "6px 14px", borderRadius: 8, textDecoration: "none" }}>
               Entrar
             </Link>
             <Link href="/register"
@@ -73,10 +70,7 @@ export default function Home() {
         </p>
         <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 1, border: `1px solid ${D.border}`, borderRadius: 14, overflow: "hidden" }}>
           {features.map((f, i) => (
-            <div key={f.label}
-              style={{ padding: "32px 28px", borderRight: i % 2 === 0 ? `1px solid ${D.border}` : "none", borderBottom: i < 4 ? `1px solid ${D.border}` : "none" }}
-              onMouseEnter={(e: any) => e.currentTarget.style.background = D.surface}
-              onMouseLeave={(e: any) => e.currentTarget.style.background = "transparent"}>
+            <div key={f.label} style={{ padding: "32px 28px", borderRight: i % 2 === 0 ? `1px solid ${D.border}` : "none", borderBottom: i < 4 ? `1px solid ${D.border}` : "none" }}>
               <div style={{ fontSize: 24, marginBottom: 14, color: D.accent }}>{f.icon}</div>
               <h3 style={{ fontSize: 15, fontWeight: 600, margin: "0 0 8px", color: D.text }}>{f.label}</h3>
               <p style={{ fontSize: 13, color: D.muted, margin: 0, lineHeight: 1.6 }}>{f.desc}</p>
